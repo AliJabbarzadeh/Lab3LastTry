@@ -10,6 +10,8 @@ import model.Supplier;
 import model.SupplierDirectory;
 import ui.CustomerRole.ViewProductDetailJPanel;
 import java.awt.CardLayout;
+import java.awt.Color;
+import static java.awt.Color.white;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -36,7 +38,7 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
      
         this.userProcessContainer = userProcessContainer;
         this.supplierDirectory = supplierDirectory;
-        this.masterOrderList = masterOrderList;
+       // this.masterOrderList = masterOrderList;
         this.currentOrder = new Order();
         
         populateCombo();
@@ -63,18 +65,12 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
         lblProductCatalogue = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblProductCatalog = new javax.swing.JTable();
-        lblSalesPrice = new javax.swing.JLabel();
-        txtSalesPrice = new javax.swing.JTextField();
         lblQuantity = new javax.swing.JLabel();
         spnQuantity = new javax.swing.JSpinner();
         btnAddToCart = new javax.swing.JButton();
-        btnProductDetails = new javax.swing.JButton();
         lblItemsInCart = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblCart = new javax.swing.JTable();
-        txtNewQuantity = new javax.swing.JTextField();
-        btnModifyQuantity = new javax.swing.JButton();
-        btnViewOrderItem = new javax.swing.JButton();
         btnRemoveOrderItem = new javax.swing.JButton();
         btnCheckOut = new javax.swing.JButton();
 
@@ -138,41 +134,32 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblProductCatalog);
 
-        lblSalesPrice.setText("Sales Price:");
-
         lblQuantity.setText("Quantity:");
 
         spnQuantity.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
-        btnAddToCart.setText("Add to Cart");
+        btnAddToCart.setText("Reserve Encounter");
         btnAddToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddToCartActionPerformed(evt);
             }
         });
 
-        btnProductDetails.setText("View Product Details");
-        btnProductDetails.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProductDetailsActionPerformed(evt);
-            }
-        });
-
-        lblItemsInCart.setText("Items in cart:");
+        lblItemsInCart.setText("Reservations:");
 
         tblCart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Item Name", "Price", "Quantity", "Total Amount"
+                "Doctor Name", "Quantity", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -180,20 +167,6 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(tblCart);
-
-        btnModifyQuantity.setText("Modify Quantity");
-        btnModifyQuantity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnModifyQuantityActionPerformed(evt);
-            }
-        });
-
-        btnViewOrderItem.setText("View Item");
-        btnViewOrderItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewOrderItemActionPerformed(evt);
-            }
-        });
 
         btnRemoveOrderItem.setText("Remove");
         btnRemoveOrderItem.addActionListener(new java.awt.event.ActionListener() {
@@ -228,38 +201,24 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
                             .addGap(18, 18, 18)
                             .addComponent(btnSearchProduct))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(lblSalesPrice)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtSalesPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
+                            .addGap(137, 137, 137)
                             .addComponent(lblQuantity)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(spnQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(btnAddToCart, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnProductDetails, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(171, 171, 171))
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE)
                         .addComponent(lblItemsInCart)
                         .addComponent(jScrollPane2)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(btnModifyQuantity)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(txtNewQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnViewOrderItem)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btnRemoveOrderItem)))
+                        .addComponent(btnRemoveOrderItem, javax.swing.GroupLayout.Alignment.TRAILING))
                     .addComponent(btnCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(36, 36, 36)
                         .addComponent(lblTitle)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
-
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {spnQuantity, txtSalesPrice});
-
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
@@ -279,9 +238,6 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnProductDetails)
-                    .addComponent(lblSalesPrice)
-                    .addComponent(txtSalesPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblQuantity)
                     .addComponent(spnQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAddToCart))
@@ -290,11 +246,7 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewOrderItem)
-                    .addComponent(btnRemoveOrderItem)
-                    .addComponent(btnModifyQuantity)
-                    .addComponent(txtNewQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btnRemoveOrderItem)
                 .addGap(18, 18, 18)
                 .addComponent(btnCheckOut, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(76, Short.MAX_VALUE))
@@ -318,75 +270,38 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnProductDetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProductDetailsActionPerformed
-        // TODO add your handling code here:
-        int selectedRowIndex = tblProductCatalog.getSelectedRow();
-        if(selectedRowIndex<0){
-        JOptionPane.showMessageDialog(this, "Please select the product first.");
-        return;
-        }
-        
-        
-        Product product = (Product) tblProductCatalog.getValueAt(selectedRowIndex, 0);
-        ViewProductDetailJPanel vpdp = new ViewProductDetailJPanel(userProcessContainer, product);
-        userProcessContainer.add("SupplierWorkAreaJPanel", vpdp);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnProductDetailsActionPerformed
-
     private void btnCheckOutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckOutActionPerformed
         // TODO add your handling code here:
         
-        masterOrderList.addNewOrder(currentOrder);
-        currentOrder = new Order();
+        //masterOrderList.addNewOrder(currentOrder);
+        //currentOrder = new Order();
+        //int selectedRowIndex = tblCart.getSelectedRow();
+        
+        //OrderItem item = (OrderItem) tblCart.getValueAt(selectedRowIndex, 0);
+        //currentOrder.deleteItem(item);
+        
         
         populateCombo();
         populateProductTable();
         populateCartTable();
         
-        txtNewQuantity.setText("");
-        txtSalesPrice.setText("");
+        //txtNewQuantity.setText("");
+        //txtSalesPrice.setText("");
         txtSearch.setText("");
         
         spnQuantity.setValue(0);
         
-        JOptionPane.showMessageDialog(this, "/Thank you for your purchase. Hope to see you again!");
+        tblCart.setValueAt("Finalized", 0, 2);
+        tblCart.setBackground(Color.green);
+        btnRemoveOrderItem.setEnabled(false);
+        JOptionPane.showMessageDialog(this, "/Thank you!");
         
+        BrowseProductsJPanel bpjp = new BrowseProductsJPanel(userProcessContainer, supplierDirectory, masterOrderList);
+        userProcessContainer.add("BrowseProductsJPanel", bpjp);
+        CardLayout layout = (CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
        
     }//GEN-LAST:event_btnCheckOutActionPerformed
-
-    private void btnModifyQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyQuantityActionPerformed
-        // TODO add your handling code here:
-        int selectedRowIndex = tblCart.getSelectedRow();
-        if(selectedRowIndex<0){
-        JOptionPane.showMessageDialog(this, "Please select the order item first.");
-        return;
-        }
-        
-        OrderItem item = (OrderItem) tblCart.getValueAt(selectedRowIndex, 0);
-        double salesPrice = 0.0;
-        int quant = 0;
-        
-        try {
-        
-        quant = Integer.parseInt(txtNewQuantity.getText());
-        
-        } catch (Exception e) {
-        JOptionPane.showMessageDialog(this, "Please check the modified quantity fields.");
-            return;
-        }
-        
-        int oldQuant = item.getQuantity();
-        if (item.getProduct().getAvail() + oldQuant < quant){
-        JOptionPane.showMessageDialog(this, "Please check product availability.");
-        return;
-        }
-        item.getProduct().setAvail(item.getProduct().getAvail()+oldQuant-quant);
-        item.setQuantity(quant);
-        
-        //populateCartTable();
-        //populateProductTable();
-    }//GEN-LAST:event_btnModifyQuantityActionPerformed
 
     private void btnSearchProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchProductActionPerformed
         
@@ -414,22 +329,6 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_btnRemoveOrderItemActionPerformed
 
-    private void btnViewOrderItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderItemActionPerformed
-        
-        int selectedRowIndex = tblCart.getSelectedRow();
-        if(selectedRowIndex<0){
-        JOptionPane.showMessageDialog(this, "Please select the item first.");
-        return;
-        }
-        
-        
-        OrderItem item = (OrderItem) tblCart.getValueAt(selectedRowIndex, 0);
-        ViewOrderItemDetailJPanel voidp = new ViewOrderItemDetailJPanel(userProcessContainer, item);
-        userProcessContainer.add("ViewOrderItemDetailJPanel", voidp);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnViewOrderItemActionPerformed
-
     private void btnAddToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddToCartActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = tblProductCatalog.getSelectedRow();
@@ -444,16 +343,18 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
         int quant = 0;
          
         try {
-        salesPrice = Double.parseDouble(txtSalesPrice.getText());
+        //salesPrice = Double.parseDouble(txtSalesPrice.getText());
         quant = (Integer) spnQuantity.getValue();
         } catch (Exception e) {
         JOptionPane.showMessageDialog(this, "Please check the price and quantity fields.");
             return;
         }
+        /*
         if(salesPrice < product.getPrice()){
         JOptionPane.showMessageDialog(this, "Price should be more than it is set in the price");
         return;
         }
+        */
         OrderItem item = currentOrder.findProduct(product);
         
         if (item == null){
@@ -486,25 +387,19 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAddToCart;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCheckOut;
-    private javax.swing.JButton btnModifyQuantity;
-    private javax.swing.JButton btnProductDetails;
     private javax.swing.JButton btnRemoveOrderItem;
     private javax.swing.JButton btnSearchProduct;
-    private javax.swing.JButton btnViewOrderItem;
     private javax.swing.JComboBox cmbSupplier;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblItemsInCart;
     private javax.swing.JLabel lblProductCatalogue;
     private javax.swing.JLabel lblQuantity;
-    private javax.swing.JLabel lblSalesPrice;
     private javax.swing.JLabel lblSupplier;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JSpinner spnQuantity;
     private javax.swing.JTable tblCart;
     private javax.swing.JTable tblProductCatalog;
-    private javax.swing.JTextField txtNewQuantity;
-    private javax.swing.JTextField txtSalesPrice;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
 
@@ -545,18 +440,19 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (OrderItem oi : currentOrder.getOrderItemList()) {
-            Object row[] = new Object[4];
+            Object row[] = new Object[3];
             row[0] = oi;
-            row[1] = oi.getSalesPrice();
-            row[2] = oi.getQuantity();
-            row[3] = oi.getQuantity() * oi.getSalesPrice();
+            //row[1] = oi.getSalesPrice();
+            row[1] = oi.getQuantity();
+            //row[3] = oi.getQuantity() * oi.getSalesPrice();
             model.addRow(row);
         }
+        tblCart.setBackground(white);
     }
     
     private void populateProductTable(String keyword) {
         
-       
+       /*
         DefaultTableModel model = (DefaultTableModel) tblProductCatalog.getModel();
         model.setRowCount(0);
         
@@ -574,6 +470,7 @@ public class BrowseProductsJPanel extends javax.swing.JPanel {
         }
         }
         }
+*/ 
     }
-    
+   
 }

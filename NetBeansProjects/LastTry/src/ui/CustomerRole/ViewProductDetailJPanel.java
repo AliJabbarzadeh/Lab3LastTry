@@ -139,7 +139,15 @@ public class ViewProductDetailJPanel extends javax.swing.JPanel {
 
     private void backButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButton1ActionPerformed
         // TODO add your handling code here:
-        
+        /*
+        backAction();
+    }                                       
+
+      private void backAction() {
+        userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+*/
     }//GEN-LAST:event_backButton1ActionPerformed
     
     

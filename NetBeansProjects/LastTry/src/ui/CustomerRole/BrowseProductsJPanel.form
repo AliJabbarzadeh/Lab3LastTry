@@ -39,30 +39,18 @@
                           <Component id="btnSearchProduct" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
-                          <Component id="lblSalesPrice" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="txtSalesPrice" linkSize="1" min="-2" pref="55" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
                           <Component id="lblQuantity" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="spnQuantity" linkSize="1" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="spnQuantity" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnAddToCart" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnProductDetails" min="-2" pref="165" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jScrollPane1" pref="590" max="32767" attributes="0"/>
                       <Component id="lblItemsInCart" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="btnModifyQuantity" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="txtNewQuantity" min="-2" pref="70" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnViewOrderItem" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btnRemoveOrderItem" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="btnRemoveOrderItem" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <Component id="btnCheckOut" alignment="1" min="-2" pref="216" max="-2" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
@@ -71,7 +59,7 @@
                       <Component id="lblTitle" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="44" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -96,9 +84,6 @@
               <Component id="jScrollPane1" linkSize="2" min="-2" pref="100" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnProductDetails" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblSalesPrice" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtSalesPrice" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="lblQuantity" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="spnQuantity" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnAddToCart" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -108,12 +93,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jScrollPane2" linkSize="2" min="-2" pref="110" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnViewOrderItem" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnRemoveOrderItem" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnModifyQuantity" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="txtNewQuantity" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="btnRemoveOrderItem" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnCheckOut" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace pref="76" max="32767" attributes="0"/>
@@ -237,13 +217,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JLabel" name="lblSalesPrice">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Sales Price:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="txtSalesPrice">
-    </Component>
     <Component class="javax.swing.JLabel" name="lblQuantity">
       <Properties>
         <Property name="text" type="java.lang.String" value="Quantity:"/>
@@ -258,23 +231,15 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAddToCart">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Add to Cart"/>
+        <Property name="text" type="java.lang.String" value="Reserve Encounter"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddToCartActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="btnProductDetails">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View Product Details"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProductDetailsActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="lblItemsInCart">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Items in cart:"/>
+        <Property name="text" type="java.lang.String" value="Reservations:"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
@@ -287,20 +252,14 @@
         <Component class="javax.swing.JTable" name="tblCart">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="4" rowCount="4">
-                <Column editable="false" title="Item Name" type="java.lang.Object"/>
-                <Column editable="false" title="Price" type="java.lang.Object"/>
+              <Table columnCount="3" rowCount="4">
+                <Column editable="false" title="Doctor Name" type="java.lang.Object"/>
                 <Column editable="false" title="Quantity" type="java.lang.Object"/>
-                <Column editable="false" title="Total Amount" type="java.lang.Object"/>
+                <Column editable="false" title="Status" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
               <TableColumnModel selectionModel="0">
-                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                  <Title/>
-                  <Editor/>
-                  <Renderer/>
-                </Column>
                 <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                   <Title/>
                   <Editor/>
@@ -325,24 +284,6 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JTextField" name="txtNewQuantity">
-    </Component>
-    <Component class="javax.swing.JButton" name="btnModifyQuantity">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Modify Quantity"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModifyQuantityActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="btnViewOrderItem">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="View Item"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnViewOrderItemActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="btnRemoveOrderItem">
       <Properties>
         <Property name="text" type="java.lang.String" value="Remove"/>
