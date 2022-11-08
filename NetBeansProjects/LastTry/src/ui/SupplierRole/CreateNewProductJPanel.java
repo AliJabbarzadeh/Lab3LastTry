@@ -43,7 +43,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         jLabel1.setText("Create New Personel");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        jLabel2.setText("Product ID:");
+        jLabel2.setText("Doctor ID:");
 
         txtId.setEditable(false);
 
@@ -156,7 +156,7 @@ public class CreateNewProductJPanel extends javax.swing.JPanel {
         p.setPrice(price);
         p.setAvail(quantity);
         
-        JOptionPane.showMessageDialog(this, "Product added!", "Info", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Doctor added!", "Info", JOptionPane.INFORMATION_MESSAGE);
 }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

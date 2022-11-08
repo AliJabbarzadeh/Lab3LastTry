@@ -36,6 +36,8 @@ public class XupplierWorkAreaJPanel extends javax.swing.JPanel {
         lblTitle.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         lblTitle.setIconTextGap(100);
 
+        btnManageProductCatalog.setBackground(new java.awt.Color(204, 255, 255));
+        btnManageProductCatalog.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnManageProductCatalog.setText("Visit a Patient");
         btnManageProductCatalog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -43,7 +45,7 @@ public class XupplierWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnProductPerformance.setText("Review Product Performance >>");
+        btnProductPerformance.setText("-");
         btnProductPerformance.setEnabled(false);
         btnProductPerformance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -51,7 +53,7 @@ public class XupplierWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdateProfile.setText("Update Personal Profile >>");
+        btnUpdateProfile.setText("-");
         btnUpdateProfile.setEnabled(false);
         btnUpdateProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +61,7 @@ public class XupplierWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdateStaff.setText("Manage Staff");
+        btnUpdateStaff.setText("-");
         btnUpdateStaff.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -67,15 +69,18 @@ public class XupplierWorkAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(393, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btnProductPerformance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnUpdateProfile)
-                        .addComponent(btnUpdateStaff)
-                        .addComponent(btnManageProductCatalog, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(lblTitle))
-                .addGap(55, 55, 55))
+                .addContainerGap(444, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnUpdateStaff)
+                    .addComponent(btnUpdateProfile)
+                    .addComponent(btnProductPerformance)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(btnManageProductCatalog, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(lblTitle)
+                            .addGap(55, 55, 55)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

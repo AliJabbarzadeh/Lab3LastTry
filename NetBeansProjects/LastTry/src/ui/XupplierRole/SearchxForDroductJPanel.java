@@ -12,11 +12,11 @@ import javax.swing.JPanel;
  *
  * @author Mihir Mehta / Hechen Gao
  */
-public class SearchForxDroductJPanel extends javax.swing.JPanel {
+public class SearchxForDroductJPanel extends javax.swing.JPanel {
 
     JPanel userProcessContainer;
     Zupplier zupplier;
-    public SearchForxDroductJPanel(JPanel upc, Zupplier z) {
+    public SearchxForDroductJPanel(JPanel upc, Zupplier z) {
         initComponents();
         userProcessContainer = upc;
         zupplier =z;
@@ -34,7 +34,7 @@ public class SearchForxDroductJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(650, 600));
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblTitle.setText("Search for Droduct");
+        lblTitle.setText("Search for Patient");
 
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -43,7 +43,7 @@ public class SearchForxDroductJPanel extends javax.swing.JPanel {
             }
         });
 
-        lblProductId.setText("Product Id:");
+        lblProductId.setText("Patient Id:");
 
         btnSearch.setText("Search");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -95,7 +95,7 @@ public class SearchForxDroductJPanel extends javax.swing.JPanel {
         int droductId = Integer.parseInt(txtId.getText());
         d = zupplier.getDroductCatalog().searchDroduct(droductId);
         if(d!=null){
-        TearchxResultJPanel vddjp = new TearchxResultJPanel(userProcessContainer, d);
+        TearchResultJPanel vddjp = new TearchResultJPanel(userProcessContainer, d);
         userProcessContainer.add("SearchResultJPanel", vddjp);
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -119,8 +119,8 @@ public class SearchForxDroductJPanel extends javax.swing.JPanel {
         userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
-        ManagexDroductCatalogJPanel managexDroductCatalogJPanel = (ManagexDroductCatalogJPanel) component;
-        managexDroductCatalogJPanel.refreshTable();
+        ManageDroductCatalogJPanel manageDroductCatalogJPanel = (ManageDroductCatalogJPanel) component;
+        manageDroductCatalogJPanel.refreshTable();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }

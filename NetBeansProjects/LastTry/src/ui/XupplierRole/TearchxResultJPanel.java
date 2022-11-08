@@ -40,17 +40,17 @@ public class TearchxResultJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(650, 600));
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblTitle.setText("View Droduct Detail");
+        lblTitle.setText("View Patient Detail");
 
-        lblProductName.setText("Product Name:");
+        lblProductName.setText("Patient Name:");
 
         txtName.setEditable(false);
 
-        lblPrice.setText("Product Price:");
+        lblPrice.setText("Doctor rating");
 
         txtPrice.setEditable(false);
 
-        btnUpdate.setText("Update Product");
+        btnUpdate.setText("Update Doctor Info");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateActionPerformed(evt);
@@ -66,7 +66,7 @@ public class TearchxResultJPanel extends javax.swing.JPanel {
 
         txtId.setEditable(false);
 
-        lblProductId.setText("Product ID:");
+        lblProductId.setText("Doctor ID:");
 
         btnSave.setText("Save");
         btnSave.setEnabled(false);
@@ -101,7 +101,7 @@ public class TearchxResultJPanel extends javax.swing.JPanel {
                         .addComponent(btnUpdate)
                         .addGap(18, 18, 18)
                         .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(141, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

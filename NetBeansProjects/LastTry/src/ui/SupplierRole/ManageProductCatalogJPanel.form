@@ -80,7 +80,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="lblSupplier">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Supplier:"/>
+        <Property name="text" type="java.lang.String" value="Community Hospital:"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">

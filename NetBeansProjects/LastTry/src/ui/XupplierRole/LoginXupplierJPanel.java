@@ -41,7 +41,7 @@ public class LoginXupplierJPanel extends javax.swing.JPanel {
         lblTitle.setIconTextGap(50);
 
         lblSupplierChooser.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblSupplierChooser.setText("Choose your supplier account:");
+        lblSupplierChooser.setText("Choose community for Patients:");
 
         cmbZupplier.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbZupplier.addActionListener(new java.awt.event.ActionListener() {

@@ -139,7 +139,7 @@ private void backAction(){
 
         Zupplier zupplier = zupplierDirectory.addZupplier();
         zupplier.setZupplyName(txtName.getText());
-        JOptionPane.showMessageDialog(null, "Supplier added successfully!!", "Info", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Community added successfully!!", "Info", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnAddActionPerformed
 
 

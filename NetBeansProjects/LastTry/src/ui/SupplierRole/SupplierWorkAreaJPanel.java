@@ -35,7 +35,8 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
         lblTitle.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         lblTitle.setIconTextGap(100);
 
-        btnManageProductCatalog.setBackground(new java.awt.Color(153, 255, 204));
+        btnManageProductCatalog.setBackground(new java.awt.Color(204, 255, 255));
+        btnManageProductCatalog.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnManageProductCatalog.setText("Manage Personel Directory >>");
         btnManageProductCatalog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,7 +73,7 @@ public class SupplierWorkAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(404, Short.MAX_VALUE)
+                .addContainerGap(395, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnProductPerformance)

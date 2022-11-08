@@ -35,6 +35,8 @@ public class ZupplierWorkAreaJPanel extends javax.swing.JPanel {
         lblTitle.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         lblTitle.setIconTextGap(100);
 
+        btnManageProductCatalog.setBackground(new java.awt.Color(204, 255, 255));
+        btnManageProductCatalog.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         btnManageProductCatalog.setText("Manage Patient Directory");
         btnManageProductCatalog.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -42,7 +44,7 @@ public class ZupplierWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnProductPerformance.setText("Review Product Performance >>");
+        btnProductPerformance.setText("-");
         btnProductPerformance.setEnabled(false);
         btnProductPerformance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,7 +52,7 @@ public class ZupplierWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdateProfile.setText("Update Personal Profile >>");
+        btnUpdateProfile.setText("-");
         btnUpdateProfile.setEnabled(false);
         btnUpdateProfile.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,7 +60,7 @@ public class ZupplierWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnUpdateStaff.setText("Manage Staff");
+        btnUpdateStaff.setText("-");
         btnUpdateStaff.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -66,7 +68,7 @@ public class ZupplierWorkAreaJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(393, Short.MAX_VALUE)
+                .addContainerGap(394, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(btnProductPerformance)

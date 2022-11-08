@@ -25,7 +25,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="393" max="32767" attributes="0"/>
+              <EmptySpace pref="394" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnProductPerformance" min="-2" max="-2" attributes="0"/>
@@ -70,6 +70,12 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnManageProductCatalog">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="cc" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="12" style="1"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Manage Patient Directory"/>
       </Properties>
       <Events>
@@ -78,7 +84,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnProductPerformance">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Review Product Performance &gt;&gt;"/>
+        <Property name="text" type="java.lang.String" value="-"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
@@ -87,7 +93,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnUpdateProfile">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Update Personal Profile &gt;&gt;"/>
+        <Property name="text" type="java.lang.String" value="-"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
@@ -96,7 +102,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnUpdateStaff">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Manage Staff"/>
+        <Property name="text" type="java.lang.String" value="-"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>

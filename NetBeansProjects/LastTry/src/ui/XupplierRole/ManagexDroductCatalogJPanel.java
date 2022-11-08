@@ -1,6 +1,6 @@
 package ui.XupplierRole;
 
-//import ui.ZupplierRole.*;
+
 import model.Droduct;
 import model.Zupplier;
 import java.awt.CardLayout;
@@ -24,7 +24,7 @@ public class ManagexDroductCatalogJPanel extends javax.swing.JPanel {
         initComponents();
         userProcessContainer = upc;
         zupplier = z;
-        lblSupplier.setText("Supplier : " + z.getZupplyName());
+        lblSupplier.setText("Community : " + z.getZupplyName());
         refreshTable();
     }
 
@@ -34,11 +34,13 @@ public class ManagexDroductCatalogJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
 
         for (Droduct d : zupplier.getDroductCatalog().getDroductcatalog()) {
-            Object row[] = new Object[4];
+            Object row[] = new Object[6];
             row[0] = d;
             row[1] = d.getModelNumber();
             row[2] = d.getPrice();
             row[3] = d.getAvail();
+            row[4] = d.getTemperature();
+            row[5] = d.getDate();
             model.addRow(row);
         }
     }
@@ -59,20 +61,20 @@ public class ManagexDroductCatalogJPanel extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(650, 600));
 
         lblTitle.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblTitle.setText("Manage Patients - Doctor Access");
+        lblTitle.setText("Manage (Patients) directory as a Doctor");
 
-        lblSupplier.setText("Supplier:");
+        lblSupplier.setText("Community:");
 
         tblDroductCatalog.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         tblDroductCatalog.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Product Name", "Product ID", "Price", "Availability"
+                "Patient Name", "Patient ID", "Blood Pressure", "Pulse", "Temperature", "Date"
             }
         ));
         jScrollPane1.setViewportView(tblDroductCatalog);
@@ -84,7 +86,7 @@ public class ManagexDroductCatalogJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnCreate.setText("New Product...");
+        btnCreate.setText("New Patient...");
         btnCreate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCreateActionPerformed(evt);
@@ -105,7 +107,7 @@ public class ManagexDroductCatalogJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnDelete.setText("Delete Product");
+        btnDelete.setText("Delete Patient");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -172,16 +174,16 @@ public class ManagexDroductCatalogJPanel extends javax.swing.JPanel {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
 
-        CreateNewxDroductJPanel cnxdjp = new CreateNewxDroductJPanel(userProcessContainer, zupplier);
-        userProcessContainer.add("CreateNewxDroductJPanel", cnxdjp);
+        CreatexNewDroductJPanel cxndjp = new CreatexNewDroductJPanel(userProcessContainer, zupplier);
+        userProcessContainer.add("CreatexNewDroductJPanel", cxndjp);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCreateActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
 
-        SearchForxDroductJPanel sfxdjp = new SearchForxDroductJPanel(userProcessContainer, zupplier);
-        userProcessContainer.add("SearchForxDroductJPanel", sfxdjp);
+        SearchxForDroductJPanel sxfdjp = new SearchxForDroductJPanel(userProcessContainer, zupplier);
+        userProcessContainer.add("SearchxForDroductJPanel", sxfdjp);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnSearchActionPerformed
@@ -201,11 +203,9 @@ public class ManagexDroductCatalogJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        //Droduct z = (Droduct) tblDroductCatalog.getValueAt(selectedRowIndex, 0);
-        //zupplier.getDroductCatalog().removeDroduct(z);
-        //refreshTable();
-        JOptionPane.showMessageDialog(null, "You can not delet a Patient record as a Doctor!", "Warning", JOptionPane.WARNING_MESSAGE);
-        
+        Droduct z = (Droduct) tblDroductCatalog.getValueAt(selectedRowIndex, 0);
+        zupplier.getDroductCatalog().removeDroduct(z);
+        refreshTable();
     }//GEN-LAST:event_btnDeleteActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;

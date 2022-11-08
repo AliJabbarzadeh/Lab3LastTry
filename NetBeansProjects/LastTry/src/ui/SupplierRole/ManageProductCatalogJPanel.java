@@ -23,7 +23,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         initComponents();
         userProcessContainer = upc;
         supplier = s;
-        lblSupplier.setText("Supplier : " + s.getSupplyName());
+        lblSupplier.setText("Community Hospital : " + s.getSupplyName());
         refreshTable();
     }
 
@@ -60,7 +60,7 @@ public class ManageProductCatalogJPanel extends javax.swing.JPanel {
         lblTitle.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblTitle.setText("Manage Personel Directory");
 
-        lblSupplier.setText("Supplier:");
+        lblSupplier.setText("Community Hospital:");
 
         tblProductCatalog.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         tblProductCatalog.setModel(new javax.swing.table.DefaultTableModel(
